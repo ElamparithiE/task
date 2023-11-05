@@ -1,0 +1,583 @@
+<!Doctype HTML>
+<html>
+<head>
+	<title>Dashboard</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="website icon" href="/img/google png.png">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body{
+	margin:0px;
+	padding: 0px;
+	background-color:#efeff5;
+	font-family: system-ui;
+}
+.clearfix{
+	clear: both;
+}
+.logo{
+	margin: 0px;
+	margin-left: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+}
+.sidenav {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #09c137;
+  overflow: hidden;
+  padding-top: 30px;
+  transition: ease-in-out 0.3s;
+}
+.menu{
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.logo1{
+  margin: 0px;
+  margin-left: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 50px;
+    display: none;
+    cursor: pointer;
+}
+.menu1{
+  float: left;
+  display: none;
+}
+.sidenav a {
+  padding: 15px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color:black;
+  display: block;
+}
+.sidenav a:hover {
+  color: #170404;
+  background-color:rgb(235, 246, 235) ;
+}
+.sidenav{
+ 
+  top: 0;
+  right: 25px;
+  font-size: 30px;
+}
+#main {
+  padding: 16px;
+  margin-left: 300px;
+}
+.head{
+padding: 0px 6px;
+    border-bottom: 1px solid #d6d6d8b8;
+    padding-bottom: 10px;
+}
+.col-div-6{
+	width: 50%;
+	float: left;
+}
+.profile{
+	display: inline-block;
+	
+	width: 200px;
+
+}
+.pro-img{
+	float: left;
+    width: 40px;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+.profile p{
+	color: #6c7293;
+    font-weight: 500;
+    margin-left: 35px;
+    margin-top: 10px;
+    font-size: 13.5px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 25px;
+    padding-left: 35px;
+    cursor: pointer;
+}
+.dots{
+  margin-left: 10px;
+
+}
+
+
+.hr{
+  margin: 0px;
+  border: none;
+  background-color: #ddd;
+  height: 1px;
+}
+.notification-div p{
+  margin: 0px;
+    padding: 10px 20px;
+     color: #6c7293;
+}
+.notification-div p span{
+  font-size: 11px;
+  display: block;
+}
+
+.notification-div p:hover{
+  margin: 0px;
+    padding: 10px 20px;
+    background-color: #5643ff;
+    border-radius: 0px;
+    color: white;
+}
+.search-icon{
+  position: absolute;
+    right: 22%;
+    top: 25px;
+    background-color: white;
+    padding: 13px;
+    border-radius: 21px;
+    color: #6c7293;
+    cursor: pointer;
+}
+
+.noti-icon{
+  position: absolute;
+    right: 17%;
+    top: 25px;
+    background-color: #5643ff;
+    padding: 13px;
+    border-radius: 21px;
+    color: #fff;
+    cursor: pointer;
+}
+.noti-icon:after{
+  content: '';
+  height: 5px;
+  width: 5px;
+  border-radius: 5px;
+  top: 5px;
+  left: 20px;
+  position: absolute;
+  background-color: red;
+}
+
+
+.col-div-4-1{
+  width: 33.3%;
+  float: left;
+}
+.box{
+	width: 88%;
+	height: 130px;
+	background-color: #ffffff;
+	margin-left: 10px;
+	padding:10px;
+  box-shadow: 2px 5px 10px #ddd;
+  position: relative;
+}
+.box p{
+    color: #6c7293;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.number{
+  font-size: 35px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+.percent{
+  margin: 0px;
+  font-size: 14px;
+  color: #37bf37!important;
+}
+.percent span{
+  font-size: 12px;
+  color: #9398b1;
+  padding-left: 3px;
+}
+.head-1{
+  font-size: 18px!important;
+  margin: 10px 0px;
+      color: #6c7293;
+}
+.head-1 span{
+    float: right;
+    background-color: #5643ff;
+    color: white;
+    padding: 3px 10px;
+    font-size: 15px;
+}
+.box-icon{
+	    font-size: 20px!important;
+    margin-top: 35px!important;
+    color: #5643ff;
+    padding-right: 10px;
+    background-color: #efeff5;
+    padding: 15px;
+    border-radius: 25px;
+    position: absolute;
+    right: 16px;
+    top: -18px;
+}
+.box-1{
+  width: 88%;
+  height: 282px;
+  background-color: #ffffff;
+  margin-left: 10px;
+  padding:10px;
+  box-shadow: 2px 5px 10px #ddd;
+  position: relative;
+}
+.m-box{
+  color: #6c7293;
+  position: relative;
+  padding: 0px 12px;
+}
+.active{
+    background-color: #5646ff;
+    color: white;
+    box-shadow: 4px 3px 7px 3px #3226ad54;
+}
+.active .no-1{
+  color: #ddd!important;
+}
+.m-box p{
+  display: inline-block;
+      margin: 10px 0px;
+}
+.no{
+  position: absolute!important;
+    top: 21px;
+    right: 15px;
+    font-weight: 500;
+}
+.no-1{
+      font-size: 12px;
+    color: #9398b1;
+}
+.act-p{
+  font-size: 13px;
+  color: #6c7293;
+}
+.act-p .fa{
+  color: orange!important;
+}
+
+.content-box-1{
+  padding: 0px 10px;
+}
+.col-div-12{
+	width: 100%;
+}
+
+.col-div-4{
+	width: 30%;
+	float: left;
+}
+.content-box{
+	padding: 20px;
+}
+.content-box p{
+	margin: 0px;
+    font-size: 20px;
+    color:#6c7293;
+}
+.content-box p span{
+	float: right;
+    background-color: #5643ff;
+    color: white;
+    padding: 3px 10px;
+    font-size: 15px;
+}
+.box-8{
+	width: 97.8%;
+	background-color: #fff;
+	height: 330px;
+	
+}
+
+.nav{
+	font-size: 30px;
+    cursor: pointer;
+    color: #6c7293;
+    margin: 11px 0px;
+}
+
+.box-8{
+	margin-left: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: #6c88be;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+     background-color: #5643ff29;
+    color: #6c7293!important;
+}
+.circle-wrap {
+  margin: 50px auto;
+  width: 150px;
+  height: 150px;
+  background: #e6e2e7;
+  border-radius: 50%;
+}
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+}
+.circle-wrap .circle .mask {
+  clip: rect(0px, 150px, 150px, 75px);
+}
+
+.circle-wrap .circle .mask .fill {
+  clip: rect(0px, 75px, 150px, 0px);
+  background-color: rgb(13, 177, 57);
+}
+.circle-wrap .circle .mask.full,
+.circle-wrap .circle .fill {
+  animation: fill ease-in-out 3s;
+  transform: rotate(126deg);
+}
+
+@keyframes fill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(126deg);
+  }
+}
+.circle-wrap .inside-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #fff;
+  line-height: 130px;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  position: absolute;
+  z-index: 100;
+  font-weight: 700;
+  font-size: 2em;
+  color:#6c7293;
+}
+/* Style the main content area */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the data table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Style the data filter input */
+#data-filter {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Responsive design using media queries */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+  </style>
+</head>
+
+
+<body>
+	
+	<div id="mySidenav" class="sidenav">
+	<p class="logo">Elamparithi </p>
+
+  <a href="#data-visualization" class="icon-a"><i class="fa fa-dashboard icons"></i>   Data Visualization</a>
+  <a href="#data-table"class="icon-a"><i class="fa fa-pie-chart icons"></i>   Data Table</a>
+  <a href="#interactivity"class="icon-a"><i class="fa fa-list icons"></i>   Interactivity</a>
+
+
+
+</div>
+<div id="main">
+
+	<div class="head">
+		<div class="col-div-6">
+<p class="nav"> Dashboard</p>
+
+</div>
+
+	<div class="clearfix"></div>
+</div>
+
+	<div class="clearfix"></div>
+	<br/>
+<br/>
+	
+	<div class="clearfix"></div>
+	<br/>
+    <main>
+        <section id="data-visualization">
+            <h2>Data Visualization</h2>
+            <canvas id="chart"></canvas>
+        </section>
+        <section id="data-table">
+            <h2>Data Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Item A</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Item B</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Item C</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Item D</td>
+                        <td>55</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="interactivity">
+            <h2>Interactivity</h2>
+            <label for="data-filter">Filter Data:</label>
+            <input type="text" id="data-filter" placeholder="Search...">
+        </section>
+    </main>
+
+	
+		
+	<div class="clearfix"></div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+<script >
+    // main.js
+document.addEventListener("DOMContentLoaded", function () {
+// Mock data for the chart
+const chartData = {
+    labels: ["Item A", "Item B", "Item C", "Item D", "Item E"],
+    datasets: [
+        {
+            label: "Values",
+            data: [25, 45, 30, 70, 20],
+            backgroundColor: [
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+            ],
+            borderColor: [
+                "rgba(75, 192, 192, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(153, 102, 255, 1)",
+            ],
+            borderWidth: 1,
+        },
+    ],
+};
+
+const chartOptions = {
+    scales: {
+        y: {
+            beginAtZero: true,
+        },
+    },
+};
+
+const ctx = document.getElementById("chart").getContext("2d");
+const myChart = new Chart(ctx, {
+    type: "bar",
+    data: chartData,
+    options: chartOptions,
+});
+
+// Data table filtering
+const dataFilter = document.getElementById("data-filter");
+const dataRows = document.querySelectorAll("#data-table tbody tr");
+
+dataFilter.addEventListener("input", function () {
+    const filterText = dataFilter.value.toLowerCase();
+    dataRows.forEach((row) => {
+        const rowData = Array.from(row.children)
+            .map((cell) => cell.textContent.toLowerCase());
+        if (rowData.some((data) => data.includes(filterText))) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+});
+});
+
+</script>
+</body>
+
+
+</html>
